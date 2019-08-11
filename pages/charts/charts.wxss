@@ -3,6 +3,10 @@ ec-canvas {
   height: 100%;
   margin-top:10px;
 }
+.ec-canvas{
+  margin-top: 50px;
+}
+
 .container{
   position: absolute;
   top:0;
