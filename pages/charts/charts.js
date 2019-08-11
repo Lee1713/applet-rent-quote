@@ -4,27 +4,27 @@ const app = getApp();
 
 function initChart(canvas, width, height) {
   const chart = echarts.init(canvas, null, {
-    width: 410,
-    height: 250
+    width: width,
+    height: height
   });
   canvas.setChart(chart);
 
   var option = {
     title: {
-      text: '2019年报价趋势图',
+      text: '测试下面legend的红色区域不应被裁剪',
       left: 'center'
     },
-    color: ["#37A2DA"],
-    // legend: {
-    //   data: ['A'],
-    //   top: 50,
-    //   left: 'center',
-    //   backgroundColor: 'red',
-    //   z: 100
-    // },
-    // grid: {
-    //   containLabel: true
-    // },
+    color: ["#37A2DA", "#67E0E3", "#9FE6B8"],
+    legend: {
+      data: ['A', 'B', 'C'],
+      top: 50,
+      left: 'center',
+      backgroundColor: 'red',
+      z: 100
+    },
+    grid: {
+      containLabel: true
+    },
     tooltip: {
       show: true,
       trigger: 'axis'
@@ -32,31 +32,7 @@ function initChart(canvas, width, height) {
     xAxis: {
       type: 'category',
       boundaryGap: false,
-      data: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
-      // x轴的字体样式
-      axisLabel: {
-        show: true,
-        textStyle: {
-          color: '#000',
-          fontSize: '14',
-        }
-      },
-      // 控制网格线是否显示
-      splitLine: {
-        show: true,
-        //  改变轴线颜色
-        lineStyle: {
-          // 使用深浅的间隔色
-          color: ['#aaaaaa']
-        }
-      },
-      // x轴的颜色和宽度
-      axisLine: {
-        lineStyle: {
-          color: '#000',
-          width: 1,   //这里是坐标轴的宽度,可以去掉
-        }
-      }
+      data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
       // show: false
     },
     yAxis: {
@@ -66,15 +42,24 @@ function initChart(canvas, width, height) {
         lineStyle: {
           type: 'dashed'
         }
-      },
-
+      }
       // show: false
     },
     series: [{
       name: 'A',
       type: 'line',
-      smooth: false,
-      data: [15, 2, 30, 16, 10, 17, 15, 22, 27, 9]
+      smooth: true,
+      data: [18, 36, 65, 30, 78, 40, 33]
+    }, {
+      name: 'B',
+      type: 'line',
+      smooth: true,
+      data: [12, 50, 51, 35, 70, 30, 20]
+    }, {
+      name: 'C',
+      type: 'line',
+      smooth: true,
+      data: [10, 30, 31, 50, 40, 20, 10]
     }]
   };
 
@@ -83,6 +68,14 @@ function initChart(canvas, width, height) {
 }
 
 Page({
+  onShareAppMessage: function (res) {
+    return {
+      title: 'ECharts 可以在微信小程序中使用啦！',
+      path: '/pages/index/index',
+      success: function () { },
+      fail: function () { }
+    }
+  },
   data: {
     ec: {
       onInit: initChart
