@@ -32,7 +32,15 @@ Page({
       "decoration": "luxury",
       "src": "..\/..\/image\/default.jpg",
       "create_time": "2019-08-10 18:47:25"
-    }]
+      }, {
+        "uid": 3,
+        "floor": 8,
+        "size": "50",
+        "quote": 6000,
+        "decoration": "luxury",
+        "src": "..\/..\/image\/default.jpg",
+        "create_time": "2019-08-10 18:47:25"
+      }]
   },
   //事件处理函数
   bindViewTap: function() {
