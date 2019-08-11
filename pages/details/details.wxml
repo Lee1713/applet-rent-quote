@@ -1,0 +1,21 @@
+<!--index.wxml-->
+<view class="container">
+
+  <view class="circle">
+    <view class="userAvatar">
+      <open-data type="userAvatarUrl"></open-data>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </view>
+  </view>
+
+  <view class="list-style">
+    <view wx:for="{{list}}" wx:key="id">
+      <view class="lesson" id="{{item.id}}">
+        <image class="lesson-pic" mode="aspectFit" src="{{item.src}}"></image>
+        <view class="lesson-name">报价：{{item.quote}} 元/月</view>
+        <view class="lesson-introduce">楼层：{{item.floor}}  装修：{{item.decoration}}</view>
+        <view class="lesson-display-date">提交日期：{{item.create_time}}</view>
+      </view>
+    </view>
+  </view>
+</view>

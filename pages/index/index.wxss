@@ -1,0 +1,60 @@
+
+
+
+/**index.wxss**/
+
+.form-area{
+  width:70%;
+  margin:135rpx 10rpx;
+}
+
+.quote-info{
+  padding:20rpx 10rpx;
+}
+.quote-info text{
+  font-size: 28rpx;
+  line-height: 28rpx;
+  color:#353535;
+}
+.list{
+  color: #353535;
+  font-size: 32rpx;
+}
+.quote, .floor, .decoration, .quote-date{
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  pad: 20rpx;
+  border-bottom: 1rpx solid #eee;
+}
+.quote input, .floor input, .decoration input{
+  text-align: right;
+}
+.floor{
+  background: #fff;
+}
+.radio radio{
+  margin-left: 30rpx;
+}
+button{
+  background: #fe6702;
+  color:#fff;
+  position: absolute;
+  bottom: 0;
+  left:0;
+  width:100%;
+}
+.modal view{
+  text-align: center;
+}
+
+
+.picker{
+  padding:13px;
+  background-color: #fff;
+}
+.input-text{
+  padding:3px;
+}

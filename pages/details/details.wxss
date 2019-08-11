@@ -1,0 +1,52 @@
+
+/**index.wxss**/
+
+.title{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top:40fr;
+  margin-bottom: 40fr;
+  font-size:16px;
+  color:#aaa;
+}
+
+.list-style{
+  width: 100%;
+  margin-left: 20px;
+  margin-top:60px;
+}
+.lesson{
+  height: 190rpx;
+  padding-left: 20rpx;
+}
+.lesson-pic{
+  position: absolute;
+  height: 150rpx;
+  width: 150rpx;
+}
+.lesson-name{
+  position: absolute;
+  margin-left: 220rpx;
+  font-size: 35rpx;
+}
+.lesson-introduce{
+  position: absolute;
+  margin-left: 220rpx;
+  margin-top: 60rpx;
+  margin-right: 20rpx;
+  color:rgb(185, 161, 161);
+  font-size: 28rpx;
+}
+.lesson-display-date{
+  position: absolute;
+  font-size:28rpx;
+  color: rgb(185, 161, 161);
+  margin-top:120rpx;
+  margin-left: 220rpx;
+}
+.footer{
+  display: flex;
+  flex-flow: row wrap;
+  align-items: stretch;
+}

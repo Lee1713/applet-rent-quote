@@ -1,0 +1,39 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/details/details",
+    "pages/charts/charts"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#2f2f8f",
+    "navigationBarTitleText": "晶都出租报价查询",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "position": "bottom",
+    "borderStyle": "white",
+    "selectedColor": "#1296db",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "提交报价",
+        "iconPath": "./image/icon_quote.png",
+        "selectedIconPath": "./image/icon_quote_sel.png"
+      },
+      {
+        "pagePath": "pages/details/details",
+        "text": "报价列表",
+        "iconPath": "./image/icon_list.png",
+        "selectedIconPath": "./image/icon_list_sel.png"
+      },
+      {
+        "pagePath": "pages/charts/charts",
+        "text": "报价趋势",
+        "iconPath": "./image/icon_chart.png",
+        "selectedIconPath": "./image/icon_chart_sel.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap53.json"
+}
