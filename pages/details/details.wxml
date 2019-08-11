@@ -1,12 +1,6 @@
 <!--index.wxml-->
 <view class="container">
 
-  <view class="circle">
-    <view class="userAvatar">
-      <open-data type="userAvatarUrl"></open-data>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </view>
-  </view>
 
   <view class="list-style">
     <view wx:for="{{list}}" wx:key="id">

@@ -1,6 +1,9 @@
 
 /**index.wxss**/
 
+.container{
+  padding:35rpx 0;
+}
 .title{
   display: flex;
   flex-direction: column;
@@ -14,7 +17,6 @@
 .list-style{
   width: 100%;
   margin-left: 20px;
-  margin-top:60px;
 }
 .lesson{
   height: 190rpx;
