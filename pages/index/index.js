@@ -68,6 +68,8 @@ Page({
     var selDecoration = this.data.selDecoration;
     var information=e.detail.value;
     var publishDate=this.data.publishDate;
+    var json = e.detail.value;
+    
     this.setData({
       infomation:e.detail.value,
       selFloor,

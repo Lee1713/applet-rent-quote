@@ -8,7 +8,7 @@
         <image class="lesson-pic" mode="aspectFit" src="{{item.src}}"></image>
         <view class="lesson-name">报价：{{item.quote}} 元/月</view>
         <view class="lesson-introduce">楼层：{{item.floor}}  装修：{{item.decoration}}</view>
-        <view class="lesson-display-date">提交日期：{{item.create_time}}</view>
+        <view class="lesson-display-date">报价日期：{{item.create_time}}</view>
       </view>
     </view>
   </view>

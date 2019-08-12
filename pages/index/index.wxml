@@ -33,7 +33,7 @@
       </view>
 
       <view class="quote-date">
-        <text>报价时间</text>
+        <text>报价日期</text>
         <picker mode="date" value="{{date}}" start="2017-01-01" end="2025-12-30" bindchange="bindDateChange">
           <view class="picker">
             <text>{{publishDate}}</text>
