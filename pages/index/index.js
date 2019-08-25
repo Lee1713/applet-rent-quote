@@ -79,13 +79,40 @@ Page({
       return false;
     } 
 
+    wx.request({
+      url: 'http://127.0.0.1:8086/api/user/test',
+      header: {
+        "Content-Type: ":"application/x-www-form-urlencoded"
+      },
+      method:"POST",
+      data:{},
+      success: function (res) {
+        console.log(res.data);
+        if (res.data.status == 0) {
+          wx.showToast({
+            title: '提交失败',
+            icon:'loading',
+            duration:1500
+          })
+        } else {
+          wx.showToast({
+            title: '提交成功',
+            icon:'success',
+            duration:1000
+          })
+        }
+      }
+    })
+/*
     this.setData({
-      infomation:e.detail.value,
+      quote,
       selFloor,
       selDecoration,
       publishDate,
       modalHidden:false
     })
+    */
+
   },
 
   modalCancel(){

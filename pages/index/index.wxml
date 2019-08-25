@@ -53,7 +53,7 @@
  
   <view>楼层：{{selFloor}}</view>
   <view>装修：{{selDecoration}}</view>
-  <view>报价：{{infomation.quote}}</view>
+  <view>报价：{{quote}}</view>
   <view>报价日期：{{publishDate}}</view>
   </modal>
   <!--模态框-->
