@@ -58,3 +58,15 @@ button{
 .input-text{
   padding:3px;
 }
+
+.showErrorMsg{
+  background: #de352d;
+  color:#fff;
+  height:58rpx;
+  line-height: 58rpx;
+  font-size: 24rpx;
+  text-align: center;
+  margin-bottom: 5rpx;
+  width:100%;
+  z-index: 3;
+}

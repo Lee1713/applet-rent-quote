@@ -1,6 +1,6 @@
 <!--index.wxml-->
-<view class="container">
 
+<view class="container">
   <view class="circle">
     <view class="userAvatar">
       <open-data type="userAvatarUrl"></open-data>
@@ -8,15 +8,17 @@
   </view>
 
 <view class="form-area">
+  <view class="showErrorMsg" wx:if="{{errorMsg}}">{{errorMsg}}</view>
   <form bindsubmit="formSubmit">
     <view class="list">
       <view class="quote">
         <text>报价</text>
         <input name="quote" type="text" placeholder="请输入报价" placeholder-style="font-size:28rpx;" class="input-text"></input>元/月
       </view>
+      
       <view class="floor">
         <text>楼层</text>
-        <picker type="modal" bindchange="bindFloorPickerChange" value="{{floorArray[selFloor].name}}" range-key="'value'" range="{{floorArray}}">
+        <picker bindchange="bindFloorPickerChange" value="{{floorArray[selFloor].name}}"  range-key="value" range="{{floorArray}}">
           <view class="picker">
             <text>{{floorArray[selFloor].value}}</text>
           </view>
@@ -34,7 +36,7 @@
 
       <view class="quote-date">
         <text>报价日期</text>
-        <picker mode="date" value="{{date}}" start="2017-01-01" end="2025-12-30" bindchange="bindDateChange">
+        <picker mode="date" value="{{publishDate}}" end="2025-01-01" bindchange="bindDateChange">
           <view class="picker">
             <text>{{publishDate}}</text>
           </view>
@@ -47,7 +49,8 @@
   </view>
 
   <!--模态框-->
-  <modal class="modal" title="提交的信息" hidden="{{modalHidden}}" bindcancel='modalCancel' bindconfirm='modalConfirm'>
+  <modal class="modal" hidden="{{modalHidden}}" bindcancel='modalCancel' bindconfirm='modalConfirm'>
+ 
   <view>楼层：{{selFloor}}</view>
   <view>装修：{{selDecoration}}</view>
   <view>报价：{{infomation.quote}}</view>

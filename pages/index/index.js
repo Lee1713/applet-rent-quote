@@ -1,4 +1,6 @@
 //index.js
+var util = require('../../utils/util.js')
+
 //获取应用实例
 const app = getApp()
 
@@ -9,8 +11,7 @@ Page({
     quote:"",
     floorArray: [{
       "name": "lower",
-      "value": "低层",
-      "checked":true,
+      "value": "低层"
     }, {
       "name": "middle",
       "value": "中层"
@@ -20,35 +21,35 @@ Page({
     }],
     decorationArray: [{
       "name": "simple",
-      "value": "\u7b80\u88c5"
+      "value": "简装"
     }, {
       "name": "hardcover",
-      "value": "\u7cbe\u88c5"
+      "value": "精装"
     }, {
       "name": "luxury",
-      "value": "\u8c6a\u534e\u88c5"
+      "value": "豪华装"
     }],
-    publishDate:'2019-08-12',
+    startDate: "2017",
+    endDate: "2025",
+    publishDate: util.formatDate(new Date),
     infomation:[],
     selFloor:0,
     selDecoration:0,
     modalHidden:true,
+    errorMsg:''
   },
 
-  
-
-  //事件处理函数
-
+  //----------事件处理函数-------------
   bindFloorPickerChange(e){
-    console.log(e.detail.value);
+    console.log("floor is: ", e.detail.value);
     this.setData({
-      selFloor:e.detail.value
+      selFloor: e.detail.value
     })
   },
 
   bindDecorationPickerChange(e) {
-    console.log(this.data.decorationArray);
-    console.log("select is:", e.detail.value);
+    //console.log(this.data.decorationArray);
+    console.log("decoration is:", e.detail.value);
     this.setData({
       selDecoration: e.detail.value
     })
@@ -57,19 +58,27 @@ Page({
   bindDateChange: function (e) {
     console.log(e.detail.value);
     this.setData({
-      date: e.detail.value
+      publishDate: e.detail.value
     })
   },
 
   //submit form
   formSubmit(e){
     console.log("submit data:",e.detail.value);
-    var selFloor=this.data.selFloor;
+    var selFloor = this.data.selFloor;
     var selDecoration = this.data.selDecoration;
     var information=e.detail.value;
     var publishDate=this.data.publishDate;
+
     var json = e.detail.value;
-    
+    var quote = json.quote;
+    if (!(/^[1-9]\d{2,}$/.test(quote))) {
+      this.setData(
+        { errorMsg:"价格不能是0或以0开头，且不支持小数"}
+      )
+      return false;
+    } 
+
     this.setData({
       infomation:e.detail.value,
       selFloor,
